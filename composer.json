@@ -1,0 +1,17 @@
+{
+    "name": "r00t3g/mikoomi-zabbix-mongodb-monitoring",
+    "version": "1.0.1",
+    "description": "MongoDB Monitoring for Zabbix",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "daven",
+            "email": "daven@wisebits.com"
+        }
+    ],
+    "require": {
+        "mongodb/mongodb": "^1.1"
+    }
+}
