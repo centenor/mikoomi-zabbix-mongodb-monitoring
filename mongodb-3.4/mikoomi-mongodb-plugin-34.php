@@ -6,8 +6,7 @@ const MONGO_DEFAULT_HOST = '127.0.0.1';
 const MONGO_DEFAULT_PORT = 27017;
 
 require __DIR__ . '/../vendor/autoload.php';
-
-use MongoDB;
+var_dump(__DIR__ . '/../vendor/autoload.php');
 
 /**********************************************************************
                        Mikoomi MIT License
@@ -146,10 +145,10 @@ if ($ssl) {
 }
 //print ("Mongo connect string - " . $connect_string);
 #$mongo_connection = new Mongo("mongodb://$connect_string") ;
-$mongo_connection = new MongoDB\Client("mongodb://$connect_string");
+$mongo_connection = new \MongoDB\Client("mongodb://$connect_string");
 
 if (!$mongo_connection->getManager()->selectServer(
-    new MongoDB\Driver\ReadPreference(MongoDB\Driver\ReadPreference::RP_NEAREST)
+    new \MongoDB\Driver\ReadPreference(MongoDB\Driver\ReadPreference::RP_NEAREST)
 )
 ) {
     write_to_log("Error in connection to mongoDB using connect string $connect_string") ;
