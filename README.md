@@ -12,9 +12,8 @@ Important notes on Zabbix and MongoDB versions
 
 **In general: try to use Zabbix and MongoDB versions "close" to each other and use the scripts from the right directory.** There will be a merge of versions and only new releases of MongoDB and Zabbix will be supported in some point in time later on, and then hopefully this confusion will be cleared.
 
-* **Zabbix 3.0.x and up:** there is a partially done and working script for this Zabbix version. Please test it using the `mongodb-3.2` directory as a basline. Any improvements on this are welcome for this part of the tool. That script should also support MongoDB version 3.2 as the directory suggests.
-* **Zabbix 2.4.x:** you should use files from the directory `mongodb-2.4` with the prefixes `-24` (`MongoDB_Plugin_template_export-24.xml`, `mikoomi-mongodb-plugin-24.php` and `mikoomi-mongodb-plugin-24.sh`) at any place where this README tells you about the version without the suffix. This may also work with MongoDB 3.0, but it's not guaranteed.
-* **Zabbix 2.2 and below:** You should just use `mongodb-2.2` directory and the documentation below in this README.
+* **Zabbix 3.0.x and up:** there is a partially done and working script for this Zabbix version. Please test it using the `mongodb-zabbix-3.2` directory as a basline. Any improvements on this are welcome for this part of the tool. That script should also support MongoDB version 3.2 as the directory suggests.
+* **Zabbix 2.2 and below:** You should just use `mongodb-zabbix-2.2` directory and the documentation below in this README.
 
 Setup and Configuration
 =======================
