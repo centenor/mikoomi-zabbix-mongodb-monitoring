@@ -19,30 +19,15 @@ Setup and Configuration
 
 The MongoDB plugin uses the MongoDB PHP driver which needs to be installed on the MongoDB node being monitored. For this, install and setup the following packages:
 
-* **php5-dev (or php5-devel)** = Files for PHP5 module development
-* **php5-pear** = PEAR - PHP Extension and Application Repository
+* **php7-dev (or php7-devel)** = Files for PHP7 module development
+* **php7-pear** = PEAR - PHP Extension and Application Repository
+* **composer** = Composer package manager for installing the MongoDB PHP Library
 * **gcc** = GNU C Compiler
 * **make** = make utility
 
 For the above use the right package manager for your distribution (aptitude, yum, etc.)
 
-Now install the php MongoDB driver using the instructions at [http://us2.php.net/manual/en/mongo.installation.php](http://us2.php.net/manual/en/mongo.installation.php)
-
-Also you need the mongo PECL package for PHP which can be installed either by the package manager of your distribution or with this PECL command:
-
-```
-pecl install mongo
-```
-
-If you installed MongoDB driver via the PECL command, then you need to enable it for PHP. Edit the PHP configration of the server (e.g.: `/etc/php5/cli/php.ini`) and make sure the following line is present in it:
-
-```
-extension=mongo.so
-```
-
-Ensure that the php MongoDB driver is setup and configured properly by testing out one of the sample php programs for MongoDB driver ([http://us2.php.net/manual/en/mongo.tutorial.php](http://us2.php.net/manual/en/mongo.tutorial.php)).
-
-Download the MongoDB Plugin shell script and php file from [https://github.com/nightw/mikoomi-zabbix-mongodb-monitoring/find/master](https://github.com/nightw/mikoomi-zabbix-mongodb-monitoring/find/master) and copy them into `externalscripts` (e.g. `/etc/zabbix/externalscripts`) directory on the MongoDB node you want to monitor. **Make sure that the php script and shell script are made executable.**
+Now install the php MongoDB driver and Library using the instructions at [https://secure.php.net/manual/en/mongodb.installation.php](https://secure.php.net/manual/en/mongodb.installation.php) and [https://secure.php.net/manual/en/mongodb.tutorial.library.php](https://secure.php.net/manual/en/mongodb.tutorial.library.php)
 
 Next open up a browser and download the MongoDB Zabbix template.
 Now login to the Zabbix frontend (if it still has the default user and password, then it should be Admin/zabbix).

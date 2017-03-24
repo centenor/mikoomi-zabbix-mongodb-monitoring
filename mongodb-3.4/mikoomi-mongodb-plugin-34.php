@@ -6,7 +6,6 @@ const MONGO_DEFAULT_HOST = '127.0.0.1';
 const MONGO_DEFAULT_PORT = 27017;
 
 require __DIR__ . '/../vendor/autoload.php';
-var_dump(__DIR__ . '/../vendor/autoload.php');
 
 /**********************************************************************
                        Mikoomi MIT License
@@ -33,10 +32,7 @@ THE SOFTWARE.
 
 ************************************************************************/
 
-//error_reporting(E_PARSE) ;
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+error_reporting(E_PARSE) ;
 
 $options = getopt("Dh:p:z:u:x:H:P:", array("ssl")) ;
 $command_name = basename($argv[0]) ;
@@ -77,6 +73,12 @@ $zabbix_server = ($options['H'] ? $options['H'] : ZABBIX_DEFAULT_HOST);
 $zabbix_server_port = ($options['P'] ? $options['P'] : ZABBIX_DEFAULT_PORT);
 
 $debug_mode = isset($options['D']) ;
+
+if($debug_mode){
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+}
 
 $ssl = isset($options['ssl']) ;
 
@@ -624,7 +626,9 @@ write_to_data_lines($zabbix_name, "plugin.data_collection_time", $data_collectio
 write_to_data_lines($zabbix_name, "plugin.version", $command_version) ;
 write_to_data_lines($zabbix_name, "plugin.checksum", $md5_checksum_string) ;
 
-print_r($data_lines);
+if($debug_mode) {
+    print_r($data_lines);
+}
 
 // For DEBUG
 if ($debug_mode) {
