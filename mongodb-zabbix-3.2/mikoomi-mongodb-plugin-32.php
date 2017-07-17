@@ -469,7 +469,7 @@ if ($is_sharded == 'No') {
    $mongo_db_handle = $mongo_connection->selectDatabase('admin') ;
 
    try {
-       $rs_status = $mongo_db_handle->command(array ('replSetGetStatus' => 1));
+       $rs_status = $mongo_db_handle->command(array ('replSetGetStatus' => 1))->toArray()[0];
    } catch(\Exception $ex) {}
 
    if (!($rs_status['ok'])) {
